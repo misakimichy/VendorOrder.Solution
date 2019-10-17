@@ -35,11 +35,14 @@ namespace VendorOrder.Models
       _instances.RemoveAt(id - 1);
       ReIndex();
     }
+    //since new Vendors are indexed based on the total number of vendors,
+    // there would be a conflict if you delete a vendor that is not the last one
+    // so they must be re-indexed after a vendor is deleted
     public static void ReIndex()
     {
       for(int i = 0; i < _instances.Count; i++)
       {
-        _instances[i].Id = i;
+        _instances[i].Id = i + 1;
       }
     }
     public void AddOrder(Order order)
