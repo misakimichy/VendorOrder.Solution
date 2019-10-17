@@ -1,0 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+@using VendorOrder.Models;
+
+<h2>Are you sure you want to delete @Model["vendor"].Name?</h2>
+<br>
+<form class="" action="/vendors/@Model["vendor"].Id/delete" method="post">
+  <button type="submit" class="btn btn-danger">Delete Vendor</button>
+</form>
+<br> <hr>
+<button type="button" class="btn btn-success" onclick="window.location.href = '/vendors'">Back to Vendors</button>

@@ -6,7 +6,7 @@ namespace VendorOrder.Models
   {
     public string Name { get; set; }
     public string Description { get; set; }
-    public int Id { get; }
+    public int Id { get; set; }
     private static List<Vendor> _instances = new List<Vendor> { };
     public List<Order> Orders { get; set; }
 
@@ -29,6 +29,18 @@ namespace VendorOrder.Models
     public static Vendor Find(int searchId)
     {
       return _instances[searchId - 1];
+    }
+    public static void Delete(int id)
+    {
+      _instances.RemoveAt(id - 1);
+      ReIndex();
+    }
+    public static void ReIndex()
+    {
+      for(int i = 0; i < _instances.Count; i++)
+      {
+        _instances[i].Id = i;
+      }
     }
     public void AddOrder(Order order)
     {
