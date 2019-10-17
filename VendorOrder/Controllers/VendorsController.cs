@@ -10,7 +10,7 @@ namespace VendorOrder.Controllers
     [HttpGet("/vendors")]
     public ActionResult Index()
     {
-      List<Category> allVendors = Vendor.GetAll();
+      List<Vendor> allVendors = Vendor.GetAll();
       return View(allVendors);
     }
 
@@ -34,7 +34,7 @@ namespace VendorOrder.Controllers
       Vendor selectedVendor = Vendor.Find(id);
       List<Order> vendorOrders = selectedVendor.Orders;
       model.Add("vendor", selectedVendor);
-      model.Add("order", vendorOrders);
+      model.Add("orders", vendorOrders);
       return View(model);
     }
 
@@ -42,9 +42,9 @@ namespace VendorOrder.Controllers
     public ActionResult Create(int vendorId, string orderDescription)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
-      Venor foundVendor = Vendor.Find(vendorId);
+      Vendor foundVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(orderDescription);
-      foundVendor.AddItem(newOrder);
+      foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
       model.Add("vendor", foundVendor);
