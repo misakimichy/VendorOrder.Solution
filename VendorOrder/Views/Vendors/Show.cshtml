@@ -5,14 +5,18 @@
 @using VendorOrder.Models;
 
 <h3>Here are all the orders for @Model["vendor"].Name:</h3>
+@if (@Model["orders"].Count == 0)
+{
+  <h4>***No orders have been added yet!***</h4>
 
+}
 <ol>
 @foreach (Order order in @Model["orders"])
 {
-  <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
+  <li><h4><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></h4></li>
 }
 </ol>
-
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
-<p><a href='/vendors'>Return to vendor list</a></p>
-<p><a href='/'>Return to Main Page</a></p>
+<br><hr>
+<button type="button" class="btn btn-primary" onclick="window.location.href = '/vendors/@Model["vendor"].Id/orders/new'">Add A New Order</button>
+<button type="button" class="btn btn-success" onclick="window.location.href = '/vendors'">Back to Vendor List</button>
+<button type="button" class="btn btn-info" onclick="window.location.href = '/'">Back to Home</button>

@@ -12,6 +12,7 @@
 </ul>
 <h3>Vendor: @Model["vendor"].Name</h3>
 
-<a href='/vendors/@Model["vendor"].Id'>Back</a>
-<a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
-<a href='/vendors'>View all vendors</a>
+<br><hr>
+<button type="button" class="btn btn-success" onclick="window.location.href = '/vendors/@Model["vendor"].Id'">Back</button>
+<button type="button" class="btn btn-primary" onclick="window.location.href = '/vendors/@Model["vendor"].Id/orders/new'">Add A New Order</button>
+<button type="button" class="btn btn-info" onclick="window.location.href = '/vendors'">View All Vendors</button>

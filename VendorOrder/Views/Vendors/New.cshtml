@@ -8,10 +8,12 @@
 <form action="/vendors" method="post">
   <label for="vendorName">Vendor name</label>
   <input id="vendorName" name="vendorName" type="text">
+  <br>
   <label for="vendorDescription">Vendor description</label>
   <input id="vendorDescription" name="vendorDescription" type="text">
-  <button type="submit">Add</button>
+  <br>
+  <button type="submit" class="btn btn-info">Add</button>
 </form>
-
-<p><a href="/">Back home</a></p>
-<p><a href="/vendors">Back to vendors.</a></p>
+<br><hr>
+<button type="button" class="btn btn-primary" onclick="window.location.href = '/'">Back Home</button>
+<button type="button" class="btn btn-success" onclick="window.location.href = '/vendors'">Back to Vendors</button>
