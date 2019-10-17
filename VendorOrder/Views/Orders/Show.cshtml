@@ -8,9 +8,10 @@
 <ul>
   <li>Description: @Model["order"].Description</li>
   <li>Price: @Model["order"].Price</li>
-  <li>Order Date: @Model["order"].OrderDate.Date</li>
+  <li>Order Date: @Model["order"].OrderDate.Date.ToString("d")</li>
 </ul>
 <h3>Vendor: @Model["vendor"].Name</h3>
 
+<a href='/vendors/@Model["vendor"].Id'>Back</a>
 <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
 <a href='/vendors'>View all vendors</a>
