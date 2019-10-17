@@ -2,18 +2,25 @@
   Layout = "_Layout";
 }
 
-<h1>Add a vendor</h1>
-<p>Add a vendor here:</p>
+<h1>Add a Vendor</h1>
 
 <form action="/vendors" method="post">
-  <label for="vendorName">Vendor name</label>
-  <input id="vendorName" name="vendorName" type="text">
+  <div class="row">
+    <div class="col-md-4">
+      <label for="vendorName">Vendor name:</label>
+      <input id="vendorName" class="form-control input-md" name="vendorName" type="text" required>
+    </div>
+  </div>
   <br>
-  <label for="vendorDescription">Vendor description</label>
-  <input id="vendorDescription" name="vendorDescription" type="text">
+  <div class="row">
+    <div class="col-md-6">
+      <label for="vendorDescription">Vendor description:</label>
+      <input id="vendorDescription" class="form-control input-md" name="vendorDescription" type="text" required>
+    </div>
+  </div>
   <br>
   <button type="submit" class="btn btn-info">Add</button>
 </form>
 <br><hr>
-<button type="button" class="btn btn-primary" onclick="window.location.href = '/'">Back Home</button>
 <button type="button" class="btn btn-success" onclick="window.location.href = '/vendors'">Back to Vendors</button>
+<button type="button" class="btn btn-primary" onclick="window.location.href = '/'">Back Home</button>

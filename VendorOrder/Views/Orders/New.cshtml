@@ -3,20 +3,35 @@
 }
 
 <h1>Add a new order to @Model.Name</h1>
-
 <form action="/vendors/@Model.Id/orders" method="post">
-  <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
-  <label for="orderTitle">Order Title</label>
-  <input id="orderTitle" name="orderTitle" type="text">
+  <div class="row">
+    <div class="col-md-4">
+      <label for="orderTitle">Order Title:</label>
+      <input class="form-control input-md" id="orderTitle" name="orderTitle" type="text" required>
+    </div>
+  </div>
   <br>
-  <label for="orderDescription">Order Description</label>
-  <input id="orderDescription" name="orderDescription" type="text">
+  <div class="row">
+    <div class="col-md-6">
+      <label for="orderDescription">Order Description:</label>
+      <input class="form-control input-md" id="orderDescription" name="orderDescription" type="text" required>
+    </div>
+  </div>
   <br>
-  <label for="orderPrice">Order Price $</label>
-  <input id="orderPrice" name="orderPrice" type="number" min="0">
+  <div class="row">
+    <div class="col-md-2">
+      <label for="orderPrice">Order Price: $</label>
+      <input class="form-control input-md" id="orderPrice" name="orderPrice" type="number" min="0" required>
+    </div>
+  </div>
   <br>
-  <label for="orderDate">Order Date</label>
-  <input id="orderDate" name="orderDate" type="date" value="2019-10-17">
+  <div class="row">
+    <div class="col-md-4">
+      <label for="orderDate">Order Date:</label>
+      <input id="orderDate" name="orderDate" type="date" value="2019-10-17" required>
+    </div>
+  </div>
   <br>
   <button type='submit' class="btn btn-primary">Add order</button>
+  <button type="button" class="btn btn-success" onclick="window.location.href = '/vendors/@Model.Id'">Back</button>
 </form>
